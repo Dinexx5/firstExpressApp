@@ -6,10 +6,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const port = 3001;
-app.get('/', (req, res) => {
-    let helloSANYA = 'Hello SANYA ti krasava brat otvechau!';
-    res.send(helloSANYA);
+const products = [{ title: "tomato" }, { title: "orange" }];
+const addresses = [{ value: 'Fabriciusa 30' }, { value: 'Kirova 1' }];
+app.get('/products', (req, res) => {
+    res.send(products);
 });
+app.get('/addresses', (req, res) => {
+    res.send(addresses);
+});
+app.get('/', (req, res) => {
+    let helloMessage = "Privet";
+    res.send(helloMessage);
+});
+// start app
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });

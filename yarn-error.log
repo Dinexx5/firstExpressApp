@@ -1,5 +1,5 @@
 Arguments: 
-  E:\UCHEBA\NodeJS\node.exe C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
+  E:\UCHEBA\NodeJS\node.exe C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add coes
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;E:\UCHEBA\Git\cmd;E:\UCHEBA\NodeJS\;C:\Users\Дмитрий\AppData\Local\Microsoft\WindowsApps;C:\Users\Дмитрий\AppData\Roaming\npm;E:\UCHEBA\firstExpressApp\node_modules\.bin
@@ -14,12 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: E:\UCHEBA\firstExpressApp\package.json: Unexpected token } in JSON at position 187
-      at JSON.parse (<anonymous>)
-      at C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1629:59
-      at Generator.next (<anonymous>)
-      at step (C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
-      at C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+  Error: https://registry.yarnpkg.com/coes: Not found
+      at params.callback [as _callback] (C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
+      at self.callback (C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (C:\Users\Дмитрий\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 
 npm manifest: 
   {
@@ -29,9 +34,10 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "watch": "tsc -w",
-      "start": "nodemon --inspect dist/index.js",
+      "start": "nodemon --inspect dist/index.js"
     },
     "dependencies": {
+      "body-parser": "^1.20.1",
       "express": "^4.18.2"
     },
     "devDependencies": {
@@ -209,7 +215,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
     integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
   
-  body-parser@1.20.1:
+  body-parser@1.20.1, body-parser@^1.20.1:
     version "1.20.1"
     resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.20.1.tgz#b1812a8912c195cd371a3ee5e66faa2338a5c668"
     integrity sha512-jWi7abTbYwajOytWCQc37VulmWiRae5RyTpaCyDcS5/lMdtwSz5lOpDE67srw/HYe35f1z3fDQw+3txg7gNtWw==

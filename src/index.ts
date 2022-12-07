@@ -53,6 +53,15 @@ app.post('/products', (req: Request, res: Response) => {
     res.status(201).send(newProduct)
 })
 
+app.put('/products/:id', (req: Request, res: Response) => {
+    let product = products.find(p => p.id === +req.params.id)
+    if (!product) {
+        res.send(404)
+    } else {
+        product.title = req.body.title
+        res.send(product)
+    }
+})
 app.delete('/products/:id', (req: Request, res: Response) => {
     for (let i = 0; i < products.length; i++)  {
         if (products[i].id === +req.params.id) {
